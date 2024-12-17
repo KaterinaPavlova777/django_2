@@ -3,11 +3,11 @@ from catalog.models import Product, Category
 
 
 def home(request):
-     return render(request, 'catalog/home.html')
+    return render(request, 'home.html')
 
 
 def contacts(request):
-     return render(request, 'catalog/contacts.html')
+    return render(request, 'contacts.html')
 
 
 def product_info(request, pk):
@@ -20,8 +20,11 @@ def product_info(request, pk):
         'product_cost': product.cost,
         'product_created_at': product.created_at,
         'product_updated_at': product.updated_at
+
     }
     return render(request, template_name='product_info.html', context=context)
+
+
 def product_list(request):
     products = Product.objects.all()
     context = {
