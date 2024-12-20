@@ -1,0 +1,20 @@
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+    dependencies = [
+        ('catalog', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.AlterField(
+            model_name='product',
+            name='category',
+            field=models.CharField(blank=True, max_length=150, verbose_name='Категория'),
+        ),
+        migrations.AlterField(
+            model_name='product',
+            name='cost',
+            field=models.FloatField(blank=True, verbose_name='Стоимость'),
+        ),
+    ]
